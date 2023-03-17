@@ -11,3 +11,5 @@ x_train, x_test, y_train, y_test = train_test_split(x1, y1, test_size = 50/500)
 model = LinearRegression()
 x_train = x_train.reshape(-1, 1)
 model.fit(x_train, y_train)
+filename = 'model.pickle'
+pickle.dump(model, open(filename, 'wb'))
