@@ -1,6 +1,10 @@
 import pickle
 import streamlit as st
 
-st.title('KẾT QUẢ HỌC TẬP LỚP LÝ 4')
-a = st.number_input('Nhập họ và tên')
+st.title('Revenue Prediction')
+a = st.number_input('Input Temperature')
 if st.button('Predict'):
+    model = pickle.load(open('model.pickle', 'rb'))
+    st.write(model.predict([[a]]))
+
+  
