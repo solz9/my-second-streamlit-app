@@ -6,5 +6,5 @@ a = st.number_input('Input Temperature')
 if st.button('Predict'):
     model = pickle.load(open('model.pickle', 'rb'))
     st.write(model.predict([[a]]))
-
-  
+    r = model.predict([[a]])[0]
+    st.write(r)
